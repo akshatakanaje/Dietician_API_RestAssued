@@ -10,7 +10,7 @@ public enum APIEndpoints {
     getALlDietician("/dietician"),
     getDieticianById("/dietician/{dieticianId}"),
     updateDietician("/dietician/{dieticianId}"),
-    deleteDieticianById("/dietician/{dieticianId}")
+    deleteDieticianById("/dietician/{dieticianId}");
 
     private String resource;
 
