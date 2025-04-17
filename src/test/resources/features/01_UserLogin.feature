@@ -1,5 +1,5 @@
 @UserLogin
-Feature: Dietitian API Login
+Feature: Dietician API Login
 
   @Login_valid
   Scenario:  Verify Login valid functionality
