@@ -1,6 +1,6 @@
 package stepdefinitionsclass;
 
-import commonutils.Specification;
+import resources.Specification;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

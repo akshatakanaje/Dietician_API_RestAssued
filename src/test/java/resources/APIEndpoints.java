@@ -1,4 +1,4 @@
-package enumclass;
+package resources;
 
 public enum APIEndpoints {
 

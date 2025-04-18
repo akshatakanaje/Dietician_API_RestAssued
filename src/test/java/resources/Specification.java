@@ -1,6 +1,6 @@
-package commonutils;
+package resources;
 
-import enumclass.APIEndpoints;
+import resources.APIEndpoints;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
@@ -9,6 +9,8 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import resources.ConfigReader;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
