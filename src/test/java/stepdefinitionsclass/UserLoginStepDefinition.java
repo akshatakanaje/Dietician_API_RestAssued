@@ -5,7 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class UserLoginStepDefinition extends Specification {
+public class UserLoginStepDefinition extends Specification{
 
     @Given("{string} creates request with {string}")
     public void creates_request_with(String string, String string2) {

@@ -1,9 +1,6 @@
 package commonutils;
 
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.ss.usermodel.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -53,5 +50,59 @@ public class ExcelReader {
         return null;
     }
 
+    public String getDataFromExcel(String rowName, String colName) throws IOException {
+        int dataRowNum = -1;
+        int dataColNum = -1;
+        //String retVal = null;
+        int totalRows = sheet.getLastRowNum();
+        int totalCols = sheet.getRow(0).getPhysicalNumberOfCells();
+        for (int i = 0; i <= totalRows; i++) {
+            if (sheet.getRow(i).getCell(0).getStringCellValue().equals(rowName)) {
+                dataRowNum = i;
+                break;
+            }
+
+        }
+        for (int j = 0; j <= totalCols; j++) {
+            if (sheet.getRow(0).getCell(j).getStringCellValue().equals(colName)) {
+                dataColNum = j;
+                break;
+            }
+        }
+        // String body=sheet.getRow(dataRowNum).getCell(dataColNum).getStringCellValue();
+        // fis.close();
+        // return body;
+
+        DataFormatter formatter = new DataFormatter(); // creating formatter using the default locale
+        Cell cell = sheet.getRow(dataRowNum).getCell(dataColNum);
+        String retVal1 = formatter.formatCellValue(cell); // Returns the formatted value of a cell as a String
+        // regardless of the cell type.
+        fis.close();
+        return retVal1;
+    }
+
+    public String getDataFromExcelPost(String rowName, String colName) throws IOException {
+        int dataRowNum = -1;
+        int dataColNum = -1;
+        int totalRows = sheet.getLastRowNum();
+        int totalCols = sheet.getRow(0).getPhysicalNumberOfCells();
+        for (int i = 0; i <= totalRows; i++) {
+            if (sheet.getRow(i).getCell(0).getStringCellValue().equals(rowName)) {
+                dataRowNum = i;
+                break;
+            }
+
+        }
+        for (int j = 0; j <= totalCols; j++) {
+            if (sheet.getRow(0).getCell(j).getStringCellValue().equals(colName)) {
+                dataColNum = j;
+                break;
+            }
+        }
+        String body=sheet.getRow(dataRowNum).getCell(dataColNum).getStringCellValue();
+        fis.close();
+        return body;
+
+    }
 
 }
